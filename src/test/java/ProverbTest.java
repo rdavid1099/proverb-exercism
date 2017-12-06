@@ -25,28 +25,22 @@ public class ProverbTest {
 
         assertThat(proverb, is(expected));
     }
+
+    // @Ignore("Remove to run test")
+    @Test
+    public void testLongerChainOfConsequences() {
+        String proverb  = new Proverb("nail", "shoe", "horse", "rider").getProverb(),
+               expected = "For want of a nail the shoe was lost.\n" +
+                          "For want of a shoe the horse was lost.\n" +
+                          "For want of a horse the rider was lost.\n" +
+                          "And all for the want of a nail.";
+
+        assertThat(proverb, is(expected));
+    }
+
 }
 
 // Test suite from RUBY exercise
-//   def test_a_short_chain_of_consequences
-//     skip
-//     proverb = Proverb.new('nail', 'shoe', 'horse')
-//     expected = "For want of a nail the shoe was lost.\n" \
-//       "For want of a shoe the horse was lost.\n" \
-//       'And all for the want of a nail.'
-//     assert_equal expected, proverb.to_s
-//   end
-//
-//   def test_a_longer_chain_of_consequences
-//     skip
-//     proverb = Proverb.new('nail', 'shoe', 'horse', 'rider')
-//     expected = "For want of a nail the shoe was lost.\n" \
-//       "For want of a shoe the horse was lost.\n" \
-//       "For want of a horse the rider was lost.\n" \
-//       'And all for the want of a nail.'
-//     assert_equal expected, proverb.to_s
-//   end
-//
 //   def test_proverb_does_not_hard_code_the_rhyme_dictionary
 //     skip
 //     proverb = Proverb.new('key', 'value')
