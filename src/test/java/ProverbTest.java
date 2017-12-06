@@ -15,21 +15,19 @@ public class ProverbTest {
         assertThat(proverb, is(expected));
     }
 
-    @Ignore("Remove to run test")
+    // @Ignore("Remove to run test")
     @Test
-    public void ignoredTest() {
+    public void testShortChainOfConsequences() {
+        String proverb  = new Proverb("nail", "shoe", "horse").getProverb(),
+               expected = "For want of a nail the shoe was lost.\n" +
+                          "For want of a shoe the horse was lost.\n" +
+                          "And all for the want of a nail.";
+
+        assertThat(proverb, is(expected));
     }
 }
 
 // Test suite from RUBY exercise
-// class ProverbTest < Minitest::Test
-//   def test_a_single_consequence
-//     proverb = Proverb.new('nail', 'shoe')
-//     expected = "For want of a nail the shoe was lost.\n" \
-//       'And all for the want of a nail.'
-//     assert_equal expected, proverb.to_s
-//   end
-//
 //   def test_a_short_chain_of_consequences
 //     skip
 //     proverb = Proverb.new('nail', 'shoe', 'horse')
