@@ -38,17 +38,19 @@ public class ProverbTest {
         assertThat(proverb, is(expected));
     }
 
+    // @Ignore("Remove to run test")
+    @Test
+    public void testConsequencesAreNotHardCoded() {
+        String proverb  = new Proverb("foo", "bar").getProverb(),
+               expected = "For want of a foo the bar was lost.\n" +
+                          "And all for the want of a foo.";
+
+        assertThat(proverb, is(expected));
+    }
+
 }
 
 // Test suite from RUBY exercise
-//   def test_proverb_does_not_hard_code_the_rhyme_dictionary
-//     skip
-//     proverb = Proverb.new('key', 'value')
-//     expected = "For want of a key the value was lost.\n" \
-//       'And all for the want of a key.'
-//     assert_equal expected, proverb.to_s
-//   end
-//
 //   def test_the_whole_proverb
 //     skip
 //     chain = %w(nail shoe horse rider message battle kingdom)
